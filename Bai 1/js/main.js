@@ -2,6 +2,40 @@ const ERR_NAME = "Ten khong duoc de trong va phai dung dinh dang";
 const ERR_EMAIL = "Email khong duoc de trong va phai dung dinh dang";
 const ERR_AGE = "Tuoi khong duoc de trong va phai dung dinh dang";
 
+$(".show-form").click(function () {
+    $("#formAdd").toggle();
+});
+
+$(".add-row").click(function (e) {
+    e.preventDefault();
+    let id = generateId();
+    let name = $("#name").val();
+    let email = $("#email").val();
+    let age = $("#age").val();
+    if (validate(name, email, age)) {
+        let markup = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + email + "</td><td>" + age + "</td><td> <input type='button' class='delete-row' value='Delete'></td></tr> ";
+        $("table tbody").append(markup);
+        $(".delete-row").click(function () {
+            $(this).parents("tr").remove();
+        });
+        let people = { id: id, name: name, email: email, age: age };
+        peoples.push(people);
+    }
+});
+
+$(".delete-row").click(function () {
+    let id = $(this).parents("tr").children()[0].innerText;
+    peoples = peoples.filter(per => per.id != id)
+    $(this).parents("tr").remove();
+});
+
+$("#search").on("keyup", function () {
+    var value = $(this).val().toLowerCase();
+    $("#data tr").filter(function () {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+});
+
 var peoples = [
     { id: "0", name: "Tung Lan", email: "tunglan@gmail.com", age: "18" },
     { id: "1", name: "Doan Hoang", email: "tienhoang@gmail.com", age: "30" },
@@ -27,8 +61,8 @@ function generateTable(peoples) {
 
 function searchName(name) {
     let result = [];
-    for(let people of peoples) {
-        if(people.name.toLowerCase().indexOf(name) > -1) {
+    for (let people of peoples) {
+        if (people.name.toLowerCase().indexOf(name) > -1) {
             result.push(people);
         }
     }
@@ -59,39 +93,6 @@ function validate(name, email, age) {
 }
 
 generateTable(peoples);
-
-$(document).ready(function () {
-    $(".show-form").click(function () {
-        $("#formAdd").toggle();
-    });
-
-    $(".add-row").click(function (e) {
-        e.preventDefault();
-        let id = generateId();
-        let name = $("#name").val();
-        let email = $("#email").val();
-        let age = $("#age").val();
-        if (validate(name, email, age)) {
-            let markup = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + email + "</td><td>" + age + "</td><td> <input type='button' class='delete-row' value='Delete'></td></tr> ";
-            $("table tbody").append(markup);
-            $(".delete-row").click(function () {
-                $(this).parents("tr").remove();
-            });
-            let people = [id, name, email, age];
-            peoples.push(people);
-        }
-    });
-
-    $(".delete-row").click(function () {
-        $(this).parents("tr").remove();
-    });
-
-    $("#search").keyup(function () {
-        let input = $(this).val().toLowerCase();
-        generateTable(searchName(input));
-    });
-})
-
 
 
 
