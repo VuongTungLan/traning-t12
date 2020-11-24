@@ -23,11 +23,7 @@ $(".add-row").click(function (e) {
     }
 });
 
-$(".delete-row").click(function () {
-    let id = $(this).parents("tr").children()[0].innerText;
-    peoples = peoples.filter(per => per.id != id)
-    $(this).parents("tr").remove();
-});
+
 
 $("#search").on("keyup", function () {
     var value = $(this).val().toLowerCase();
@@ -56,6 +52,11 @@ function generateTable(peoples) {
         let markup = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + email + "</td><td>" + age + "</td><td> <input type='button' class='delete-row' value='Delete'></td></tr> ";
         $("table tbody").append(markup);
     }
+    $(".delete-row").click(function () {
+        let id = $(this).parents("tr").children()[0].innerText;
+        peoples = peoples.filter(per => per.id != id)
+        $(this).parents("tr").remove();
+    });
 }
 
 
