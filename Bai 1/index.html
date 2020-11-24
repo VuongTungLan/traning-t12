@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="search" onkeyup="searchName()" placeholder="Tim theo ten nhe...">
+   
+    <table>
+        
+    </table>
+    <button onclick="addPeople()">Add</button>
+    <form onsubmit="return false" id="formAdd">
+        Name: <input type="text" name="name">
+        <p class="err" id="errName"></p>
+        Email: <input type="text" name="email">
+        <p class="err" id="errEmail"></p>
+        Age: <input type="number" name="age">
+        <p class="err" id="errAge"></p>
+        <button  onclick="addPeopleToTable()">Add</button>
+    </form>
+    <script src="./js/main.js"></script>
+</body>
+</html>
