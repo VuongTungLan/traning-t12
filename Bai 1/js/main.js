@@ -95,6 +95,13 @@ function validate(name, email, age) {
 
 generateTable(peoples);
 
+$(document).ready(function(){
+    $("#myInput").on("keyup", function() {
+      var value = $(this).val().toLowerCase();
+      var aa = $("#myTable tr").filter($(this).text().toLowerCase().indexOf(value) > -1);
+      console.log(aa)
+    });
+  });
 
 
 
