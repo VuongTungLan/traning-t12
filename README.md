@@ -8,6 +8,7 @@ Tìm hiểu javascript basic:
  - async ( CallBack , Promise , async/await)
  - ES6 ( arrow function, class , contrustor)
  - Call , Bind
-Làm ví dụ js tạo bảng với chức năng thêm, xóa, tìm kiếm
-Sử dụng jquery cho ví dụ tạo bảng
-Làm 4 ví dụ với callback, promise, ajax, async/
+ 
+<br>Làm ví dụ js tạo bảng với chức năng thêm, xóa, tìm kiếm
+<br>Sử dụng jquery cho ví dụ tạo bảng
+<br>Làm 4 ví dụ với callback, promise, ajax, async/
