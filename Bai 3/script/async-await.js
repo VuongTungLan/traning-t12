@@ -3,7 +3,8 @@ $(document).ready(function () {
     async function dataFromServer(id) {
         try {
             let result = await $.ajax({
-                url:  (id != null) ? "https://reqres.in/api/users/" + id + "" : "https://reqres.in/api/users?page=1",
+                url: (id != null) ? "https://reqres.in/api/users/" : "https://reqres.in/api/users?page=1",
+                data: { id: id },
                 type: "GET",
             });
             return result;
@@ -12,18 +13,18 @@ $(document).ready(function () {
         }
     }
 
-    $("#get-user").on("click",async function () {
+    $("#get-user").on("click", async function () {
         let id = $("#user-id").val();
-        var data =  dataFromServer(id);
-        await data.then(function (result) {  
+        var data = dataFromServer(id);
+        await data.then(function (result) {
             searchUser(result.data)
         });
         deleteRow();
     });
 
-    $("#get-users").on("click",async function () {
-        var data =  dataFromServer();
-        await data.then(function (result) {  
+    $("#get-users").on("click", async function () {
+        var data = dataFromServer();
+        await data.then(function (result) {
             generateTable(result.data)
         });
         deleteRow();
@@ -57,8 +58,6 @@ $(document).ready(function () {
         let markup = "<tr><td>" + id + "</td><td>" + name + "</td><td>" + email + "</td><td><img src=" + avatar + "></td><td> <input type='button' class='delete-row' value='Delete'></td></tr> ";
         $("table tbody").append(markup);
     }
-
-
 });
 
 
