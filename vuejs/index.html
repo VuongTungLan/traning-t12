@@ -11,35 +11,8 @@
 
 <body>
     <div id="app">
-        <input type="text" v-model="filter">
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Avatar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="people in filteredPeoples">
-                    <td>{{people.id}}</td>
-                    <td>{{people.first_name}}</td>
-                    <td>{{people.email}}</td>
-                    <td><img v-bind:src="people.avatar" alt=""></td>
-                    <td><button v-on:click="deletePeople(people.id)">delete</button></td>
-                </tr>
-            </tbody>
-        </table>
-        <form onsubmit="return false" id="formAdd">
-            Name: <input type="text" name="name" id="name">
-            <!-- <p class="err" id="errName"></p> -->
-            Email: <input type="text" name="email" id="email">
-            <!-- <p class="err" id="errEmail"></p> -->
-            Age: <input type="number" name="age" id="age">
-            <!-- <p class="err" id="errAge"></p> -->
-            <input type="button" value="Add" v-on:click="addPeople()">
-        </form>
+        
+        <table-people></table-people>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
