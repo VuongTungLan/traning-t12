@@ -1,3 +1,4 @@
+export {generateId}
 function generateId() {
     var date = new Date();
     return date.getTime();
