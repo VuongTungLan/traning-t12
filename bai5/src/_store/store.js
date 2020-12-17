@@ -26,8 +26,8 @@ const userStore = new Vuex.Store({
             state.users.push(user)
         },
         editUser(state, newUser) {
-            for(let user in state.users) {
-                if(state.users[user].id === newUser.id) {
+            for (let user in state.users) {
+                if (state.users[user].id === newUser.id) {
                     state.users[user].username = newUser.username
                 }
             }
@@ -37,24 +37,24 @@ const userStore = new Vuex.Store({
         }
     },
     actions: {
-        addUser({commit}, user) {
-            commit('addUser',user)
+        addUser({ commit }, user) {
+            commit('addUser', user)
         },
         editUser({ commit }, user) {
             commit('editUser', user)
         },
-        getUserById({commit}, id) {
+        getUserById({ commit }, id) {
             let user = this.state.users.find(user => user.id === id)
             commit('getUser', user)
         }
     },
     getters: {
         getAll: state => {
-            return  state.users
+            return state.users
         },
         getById: (state) => (id) => {
             return state.users.find(user => user.id === id)
-        } 
+        }
     }
 })
 

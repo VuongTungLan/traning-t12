@@ -1,0 +1,12 @@
+{
+  "name": "nutx-example",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "start": "nuxt start"
+  },
+  "dependencies": {
+    "nuxt": "^2.14.11"
+  }
+}
