@@ -1,0 +1,30 @@
+[
+  {
+    "name": "boobs",
+    "path": "/boobs",
+    "component": "/home/tomosia/traning-t12/nutx-example/pages/boobs/index.vue",
+    "chunkName": "pages/boobs/index",
+    "_name": "_5bcf00e4"
+  },
+  {
+    "name": "yolo",
+    "path": "/yolo",
+    "component": "/home/tomosia/traning-t12/nutx-example/pages/yolo.vue",
+    "chunkName": "pages/yolo",
+    "_name": "_cf10fc0a"
+  },
+  {
+    "name": "boobs-id",
+    "path": "/boobs/:id",
+    "component": "/home/tomosia/traning-t12/nutx-example/pages/boobs/_id/index.vue",
+    "chunkName": "pages/boobs/_id/index",
+    "_name": "_5fb509cf"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/home/tomosia/traning-t12/nutx-example/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_160066e0"
+  }
+]

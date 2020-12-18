@@ -7,7 +7,7 @@ $("#non-promise").click(function (e) {
     setTimeout(() => {
         b++;
         console.log("b=" + b);
-        
+
     }, 3000);
     tong = a + b;
     console.log("tong: " + tong);
@@ -39,7 +39,7 @@ $("#promise").click(function (e) {
         })
         .then((value) => {
             console.log(sum(a, value));
-        }) 
+        })
         .catch((error) => {
             console.log(error);
         });
@@ -52,7 +52,7 @@ var animals2 = animals;
 $("#animals").val(animals);
 $("#animals2").val(animals2);
 
-$("#change").click(function (e) { 
+$("#change").click(function (e) {
     e.preventDefault();
     animals2.push("cho")
     $("#animals2").val(animals2);
